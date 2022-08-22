@@ -15,10 +15,10 @@ jobs:
           $vclibsuwp = Invoke-WebRequest -Uri "https://store.rg-adguard.net/api/GetFiles" -Method "POST" -ContentType "application/x-www-form-urlencoded" -Body "type=PackageFamilyName&url=Microsoft.VCLibs.140.00.UWPDesktop_8wekyb3d8bbwe&ring=RP&lang=en-US" -UseBasicParsing | Foreach-Object Links | Where-Object outerHTML -match "Microsoft.VCLibs.140.00.UWPDesktop_.+_x64__8wekyb3d8bbwe.appx" | Foreach-Object href
           Invoke-WebRequest $vclibsuwp -OutFile Microsoft.VCLibs.140.00.UWPDesktop_8wekyb3d8bbwe.appx
           Invoke-WebRequest $vclibs -OutFile Microsoft.VCLibs.140.00_8wekyb3d8bbwe.appx
-          Invoke-WebRequest https://github.com/arefdsg/eeeed/blob/main/Microsoft.UI.Xaml.2.6_2.62112.3002.0_x64__8wekyb3d8bbwe.Appx?raw=true -OutFile Microsoft.UI.Xaml.2.6_2.62112.3002.0_x64__8wekyb3d8bbwe.appx
+          Invoke-WebRequest https://github.com/arefdsg/eeeed/blob/main/Microsoft.UI.Xaml.2.7.appx?raw=true -OutFile Microsoft.UI.Xaml.2.7.appx
           Add-AppxPackage -Path .\Microsoft.VCLibs.140.00.UWPDesktop_8wekyb3d8bbwe.appx
           Add-AppxPackage -Path .\Microsoft.VCLibs.140.00_8wekyb3d8bbwe.appx
-          Add-AppxPackage -Path .\Microsoft.UI.Xaml.2.6_2.62112.3002.0_x64__8wekyb3d8bbwe.appx
+          Add-AppxPackage -Path .\Microsoft.UI.Xaml.2.7.appx
           Invoke-WebRequest https://bit.ly/3R33MXt -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
           Add-AppxPackage -Path .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
           # Create reparse point
